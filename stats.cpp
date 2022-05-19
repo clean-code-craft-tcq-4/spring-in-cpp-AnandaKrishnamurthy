@@ -25,7 +25,6 @@ StatsAlerter::StatsAlerter(double maxThresholds, const std:: vector<IAlerter*> &
     MaxThresholds=maxThresholds;    
     Alerters= alerters; 
     }
-        }
 
         
 
