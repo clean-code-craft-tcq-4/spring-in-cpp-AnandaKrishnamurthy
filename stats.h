@@ -1,9 +1,56 @@
+
 #include <vector>
+#include <algorithm>
+#include <numeric>
 
 namespace Statistics {
-    double ComputeStatistics(const std::vector<double>& ) ;
-   double average;
-   double max;
-   double  min;
-}
+class ComputeStatistics{ 
+    public: 
+         double average, max,min;  
+         ComputeStatistics(const std::vector<float>& numbers );                 
+};
+
+class IAlerter{
+public:
+virtual void Alert();
+    
+};
+class EmailAlert:public IAlerter{
+    
+public:
+    bool emailSent;
+                void  Alert()
+                    {
+                        emailSent = true;
+                    }   
+    
+};
+
+
+
+class LEDAlert:public IAlerter{
+    
+    
+    
+public:
+    bool ledGlows;
+                void  Alert()
+                    {
+                       ledGlows = true;
+                    }   
+    
+};
+
+class StatsAlerter
+    {
+      public:
+        double MaxThresholds;
+         std:: vector<IAlerter*> Alerters;
+         StatsAlerter( double maxThresholds,const std:: vector<IAlerter*>& alerters);
+         checkAndAlert(const std:: vector<float> &Temperaturedata);         
+       
+    };
+    
+    
+    
 }
