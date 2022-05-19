@@ -1,5 +1,35 @@
 #include "stats.h"
+#include <algorithm>
+#include <numeric>
+#include <math.h> 
+#include <vector>
 
-Stats Statistics::ComputeStatistics(const std::vector<___>& ) {
-    //Implement statistics here
+using namespace Statistics;
+using namespace std;
+ComputeStatistics::ComputeStatistics(const std::vector<float>&numbers) {
+       
+    if (numbers.empty())        
+        {            
+        max = NAN;
+        min = NAN;
+        average=NAN; 
+        }
+    else
+        {
+        max = *max_element(numbers.begin(), numbers.end());
+        min = *min_element(numbers.begin(), numbers.end());
+        average=std::accumulate(numbers.begin(), numbers.end(), 0.0) / numbers.size();        
+        }  
 }
+StatsAlerter::StatsAlerter(double maxThresholds, const std:: vector<IAlerter*> &alerters){
+    MaxThresholds=maxThresholds;    
+    Alerters= alerters; 
+    }
+
+        
+
+
+       
+
+      
+
