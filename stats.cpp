@@ -1,5 +1,4 @@
-#include "Stats.h"
-#include <iostream>
+#include "stats.h"
 #include <algorithm>
 #include <numeric>
 #include <math.h> 
