@@ -47,7 +47,18 @@ class StatsAlerter
         double MaxThresholds;
          std:: vector<IAlerter*> Alerters;
          StatsAlerter( double maxThresholds,const std:: vector<IAlerter*>& alerters);
-         checkAndAlert(const std:: vector<float> &Temperaturedata);         
+       void checkAndAlert(const std:: vector<float> &Temperaturedata)
+        {
+            double maximum = *max_element(Temperaturedata.begin(), Temperaturedata.end());
+            if (maximum >= MaxThresholds)
+            {
+                EmailAlert TempemailAlert;
+                LEDAlert TempledAlert;
+                TempemailAlert.Alert();
+                TempledAlert.Alert();
+               
+            }
+        }             
        
     };
     
