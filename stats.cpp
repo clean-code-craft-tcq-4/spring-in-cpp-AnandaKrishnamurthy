@@ -25,18 +25,6 @@ StatsAlerter::StatsAlerter(double maxThresholds, const std:: vector<IAlerter*> &
     MaxThresholds=maxThresholds;    
     Alerters= alerters; 
     }
-
- StatsAlerter :: checkAndAlert(const std:: vector<float> &Temperaturedata)
-        {
-            double maximum = *max_element(Temperaturedata.begin(), Temperaturedata.end());
-            if (maximum >= MaxThresholds)
-            {
-                EmailAlert TempemailAlert;
-                LEDAlert TempledAlert;
-                TempemailAlert.Alert();
-                TempledAlert.Alert();
-               
-            }
         }
 
         
