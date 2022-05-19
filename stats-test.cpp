@@ -2,7 +2,6 @@
 
 #include "catch.hpp"
 #include "stats.h"
-using namespace Statistics;
 #include <cmath>
 
 TEST_CASE("reports average, minimum and maximum") {
